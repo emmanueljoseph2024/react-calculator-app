@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { evaluate } from 'mathjs'
 import './App.css'
 
 function App() {
@@ -75,7 +76,7 @@ changeInput(input.slice(0, -1));
 
      const inputResult= () =>{
   try {
-    changeInput(eval(input)); // Be cautious with eval!
+    changeInput(evaluate(input).toString()); // Be cautious with eval!
   } catch (error) {
     changeInput("Error");
   }
